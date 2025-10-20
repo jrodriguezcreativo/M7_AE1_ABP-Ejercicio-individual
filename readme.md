@@ -30,6 +30,39 @@ El objetivo principal es practicar la conexión a una base de datos mediante el 
 |-- package.json 
 |-- readme.md
 ```
+### Configuración de la Base de datos
+```sql
+-- Crear la base de datos
+CREATE DATABASE biblioteca;
+
+-- Conectarse a la base de datos
+\c biblioteca;
+
+-- Crear la tabla libros
+CREATE TABLE libros (
+  id SERIAL PRIMARY KEY,
+  titulo VARCHAR(100) NOT NULL,
+  autor VARCHAR(100) NOT NULL,
+  year INT NOT NULL,
+  genero VARCHAR(50)
+);
+
+-- Insertar algunos registros de ejemplo
+INSERT INTO libros (titulo, autor, year, genero) VALUES
+('Cien años de soledad', 'Gabriel García Márquez', 1967, 'Realismo mágico'),
+('1984', 'George Orwell', 1949, 'Distopía'),
+('El Principito', 'Antoine de Saint-Exupéry', 1943, 'Fábula'),
+('Don Quijote de la Mancha', 'Miguel de Cervantes', 1605, 'Aventura');
+
+```
+***Crear un archivo .env en la raíz del proyecto con las credenciales de conexión a PostgreSQL:***
+```
+DB_USER=tu_usuario
+DB_PASSWORD=tu_contraseña
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=biblioteca
+```
 ### Instrucciones básicas
 1. Instalar dependencias con `npm install`.  
 2. Configurar la conexión a PostgreSQL en el archivo `.env`.  
