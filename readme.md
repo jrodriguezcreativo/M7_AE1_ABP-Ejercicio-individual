@@ -33,10 +33,10 @@ El objetivo principal es practicar la conexión a una base de datos mediante el 
 ### Configuración de la Base de datos
 ```sql
 -- Crear la base de datos
-CREATE DATABASE biblioteca;
+CREATE DATABASE librosdb;
 
 -- Conectarse a la base de datos
-\c biblioteca;
+\c librosdb;
 
 -- Crear la tabla libros
 CREATE TABLE libros (
@@ -61,7 +61,7 @@ DB_USER=tu_usuario
 DB_PASSWORD=tu_contraseña
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=biblioteca
+DB_NAME=librosdb
 ```
 ### Instrucciones básicas
 1. Instalar dependencias con `npm install`.  
